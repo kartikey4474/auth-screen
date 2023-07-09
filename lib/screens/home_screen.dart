@@ -27,39 +27,35 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: convertedWidth * 330,
-              height: convertedWidth * 225,
-              decoration: ShapeDecoration(
-                gradient: LinearGradient(
-                  begin: const Alignment(0.00, -1.00),
-                  end: const Alignment(0, 1),
-                  colors: [Colors.black.withOpacity(0), Colors.black],
-                ),
-                shape: RoundedRectangleBorder(
+            Stack(children: [
+              Container(
+                height: convertedWidth * 225,
+                width: convertedWidth * 350,
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(14),
                 ),
-              ),
-              child: Stack(children: [
-                Image.asset(
-                  'images/tiger.png',
-                  fit: BoxFit.contain,
-                ),
-                const Positioned(
-                  bottom: 24,
-                  left: 24,
-                  child: Text(
-                    'Shoot 4K Pics like a PRO',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.w900,
-                    ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: Image.asset(
+                    'images/tiger2.png',
+                    fit: BoxFit.cover,
                   ),
-                )
-              ]),
-            ),
+                ),
+              ),
+              const Positioned(
+                bottom: 24,
+                left: 24,
+                child: Text(
+                  'Shoot 4K Pics like a PRO',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: 'Satoshi',
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              )
+            ]),
             const SizedBox(
               height: 16,
             ),
